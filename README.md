@@ -1,56 +1,7 @@
-# A Todo List demo App
-This is a todo list demo designed for CS411. 
-# Tutorial
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sY1lLGe7ECA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+# National Park Database Application
 
-A comprehensive writeup is avaliable [here](https://tichung.com/blog/2021/20200323_flask/).
+## Project Summary
 
-## Requirements
-```
-python >= 3.5
-```
+The main goal of this project is to build a web application in which users can retrieve information about national parks in the USA according to their needs. In the backend, we will create the database consisting of datasets collected from the National Park Service website. The database is relational, including the Alerts table, Events table, Visitor Centers, and Parks table which are referenced to each other by the key “park_id”. Creatively, we add a comment section to allow users to upload, edit, and delete their posts. To ensure that the application works efficiently and stably, we implement diverse operations to the database like join, aggregation, and CRUD. 
 
-## Getting started
-```bash
-git clone https://github.com/a2975667/flask-gcp-mysql-demo.git
-cd flask-gcp-mysql-demo
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-export FLASK_APP = app
-flask run
-```
-
-## Setting up GCP
-Create a `app.yaml` file in the root folder with the following content:
-```yaml
-runtime: python38 # or another supported version
-
-instance_class: F1
-
-env_variables:
-  MYSQL_USER: <user_name> # please put in your credentials
-  MYSQL_PASSWORD: <user_pw> # please put in your credentials
-  MYSQL_DB: <database_name> # please put in your credentials
-  MYSQL_HOST: <database_ip> # please put in your credentials
-
-handlers:
-# Matches requests to /images/... to files in static/images/...
-- url: /img
-  static_dir: static/img
-
-- url: /script
-  static_dir: static/script
-
-- url: /styles
-  static_dir: static/styles
-```
-
-Setting up the deployment
-```bash
-curl https://sdk.cloud.google.com | bash
-gcloud components install app-engine-python
-gcloud config set project cs411-sp21
-gcloud auth login
-gcloud app deploy
-```
+[See for yourself](http://34.123.109.80:5000/)
